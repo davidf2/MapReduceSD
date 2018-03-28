@@ -9,7 +9,7 @@ if __name__ == "__main__":
 	
 	#Conseguimos la referencia a registry de manera remota
     registry = host.lookup_url('http://127.0.0.1:6000/regis', 'Registry',
-                               's4_registry')
+                               'p1_registry')
 
 	#Registramos nuestro host en el registry
     registry.bind('reducer', host)

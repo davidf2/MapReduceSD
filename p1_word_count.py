@@ -8,8 +8,8 @@ def wordCount(file):
 	lines=f.readlines()
 	
 	for line in lines:
-		line= re.sub(r'[-,;:?!.¿¡\'\(\)\[\]\n\t]',"",line) #Eliminamos caracteres especiales con Regular Expression
-		for word in line.split(' '):	
+		line= re.sub(r'[-,;:?!.¿¡\'\(\)\[\]\"*+-_<>#@&^%$]'," ",line) #Eliminamos caracteres especiales con Regular Expression
+		for word in line.split():
 			word=word.lower()					 #Pasamos a minusculas
 			if dictionary.has_key(word) == True: #Si la clave ya este en el diccionario
 				dictionary[word]=dictionary[word]+1
