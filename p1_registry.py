@@ -11,7 +11,7 @@ class NotFound(Exception):
 
 
 class Registry(object):
-    _ask = ['get_all', 'bind', 'lookup', 'unbind', 'get_keys']
+    _ask = ['get_all', 'bind', 'lookup', 'unbind', 'get_keys','num_actors']
     _async = []
     _ref = ['get_all', 'bind', 'lookup', 'get_keys']
 
@@ -42,15 +42,19 @@ class Registry(object):
     
     def get_keys(self):
         return self.actors.keys()
+    
+    def num_actors(self):
+		return len(self.actors)
+		
 
 
 if __name__ == "__main__":
     set_context()
     #Creamos un host per crear actors
-    host = create_host('http://127.0.0.1:6000/')
+    host = create_host('http://192.168.0.15:8020/')
 	#Metodo spawn(Nombre,Tipo)
     registry = host.spawn('regis', Registry)
 
-    print 'host listening at port 6000'
+    print 'host listening at port 8000'
 	#Metodo para que el host no muera y pueda escuchar las llamadas de otros actores...
     serve_forever()
