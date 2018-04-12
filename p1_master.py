@@ -89,8 +89,9 @@ class Reduce(object):
 			for i in self.list_dictionary:
 				self.g_dictionary=dict(Counter(self.g_dictionary)+Counter(i))
 			self.master.echo(self.g_dictionary)
-			self.master.echo( "Temps transcorregut per Count Word: "+str(self.time_countWord)+ " segons")
-			self.master.echo( "Temps transcorregut per Word Count: "+str(time() - self.start_time)+ " segons")
+			self.master.echo("Num total paraules: " + str(self.num_words))
+			self.master.echo( "Temps transcorregut per Word Count: "+str(self.time_countWord)+ " segons")
+			self.master.echo( "Temps transcorregut per Count Word: "+str(time() - self.start_time)+ " segons")
 			self.master.eliminarArxius(self.num_mappers)
 			shutdown()
 
