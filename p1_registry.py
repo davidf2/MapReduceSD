@@ -21,7 +21,7 @@ class Registry(object):
 
 	#Registramos los actores en el diccionario con key=nombre y value el actor
     def bind(self, name, actor):
-        print "server registred", name
+        print "server registred", name 
         self.actors[name] = actor
 
 	#Eliminamos al actor del registro a traves de su nombre, si no mostramos un mensaje de no encontrado
@@ -43,11 +43,11 @@ class Registry(object):
     def get_keys(self):
         return self.actors.keys()
 
-
 if __name__ == "__main__":
     set_context()
     #Creamos un host per crear actors
-    host = create_host('http://127.0.0.1:6000/')
+    host = create_host('http://192.168.0.15:6000/')
+    
 	#Metodo spawn(Nombre,Tipo)
     registry = host.spawn('regis', Registry)
 

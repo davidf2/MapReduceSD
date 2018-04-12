@@ -22,4 +22,3 @@ def split_file(file_name, num_mappers):
 def rm_files(file_name,num_mappers):
 	for i in range(0, num_mappers):
 		os.remove(file_name.split('.')[0]+str(i)+'.'+file_name.split('.')[-1])
-	
