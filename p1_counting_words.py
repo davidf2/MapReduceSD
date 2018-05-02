@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
+import re
 
-def countingWords(file):
+def countingWords(text):
 		counter=0
-		f = open(file, 'r')
-		lines=f.readlines()
-		for line in lines:
+		for line in text.splitlines():
+			line= re.sub(r'[-,;:?!.¿¡\'\(\)\[\]\"|*+-_<>#@&^%$]'," ",line)
 			for word in line.split():
 				counter+=1
-		f.close()
 		return counter

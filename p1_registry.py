@@ -45,8 +45,11 @@ class Registry(object):
 
 if __name__ == "__main__":
     set_context()
+    
+    ip_registry=str(raw_input("Introdueix la ip del registry: "))
+                               
     #Creamos un host per crear actors
-    host = create_host('http://192.168.0.15:6000/')
+    host = create_host('http://'+ip_registry+':6000/')
     
 	#Metodo spawn(Nombre,Tipo)
     registry = host.spawn('regis', Registry)
